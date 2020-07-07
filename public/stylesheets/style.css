@@ -1,0 +1,211 @@
+/* Style the buttons that are used to open and close the accordion panel */
+.accordion {
+    margin-top: 5px;
+    background-color: #eee;
+    /*color: #444;*/
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+  }
+  
+  /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+  .active-acc, .accordion:hover {
+    background-color: #ccc;
+  }
+  .accordion:after {
+    content: '\002B';
+    color: #777;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+  }
+  
+  .active-acc:after {
+    content: "\2212";
+  }
+  
+    .panel {
+        padding: 0 18px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  color:black;
+      }
+
+
+
+
+body {
+    font-family: 'Raleway', sans-serif;
+    color: white;
+    ;
+}
+
+
+
+nav {
+    margin-top: 0px;
+}
+
+
+.card, .list-group {
+    border: none;
+    -webkit-box-shadow: 0px 54px 34px -38px rgba(0,0,0,0.3);
+    -moz-box-shadow: 0px 54px 34px -38px rgba(0,0,0,0.3);
+    box-shadow: 0px 54px 34px -38px rgba(0,0,0,0.3);
+}
+
+.jumbotron {
+    position: relative;
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0.5)0%, rgba(0,0,0,0.6)100%),url('/assets/splash6.jpg');
+    background-size: cover;
+    margin-bottom: 0px;
+    border-radius: 0px;
+    padding-bottom: 15px;
+}
+
+.modal-content {
+    color: black;
+}
+
+.name {
+    padding-top: 20px;
+    color: white;
+}
+.socials {
+    font-size:1.5em;
+}
+.socials a {
+    color: white;
+}
+
+#linkedin{
+    margin-left: 15px;
+}
+#twitterIcon {
+    margin-left: 15px;
+}
+#garethImg {
+    width: 150px;
+    z-index: 1;
+    border-radius: 50%;
+    border: 2px orange solid;
+    -webkit-box-shadow: 1px -3px 31px 7px rgba(0,0,0,0.5);
+-moz-box-shadow: 1px -3px 31px 7px rgba(0,0,0,0.5);
+box-shadow: 1px -3px 31px 7px rgba(0,0,0,0.5);
+}
+#radio {
+    margin-left: 15px;
+}
+
+/** ROWS **/
+#aboutMeRow {
+    margin-top: 15px;
+}
+#aboutMe {
+    margin-top: 15px;
+}
+#aboutMeCard {
+    width: 50%;
+}
+#contact {
+    margin-top: 100px;
+}
+.bgwhite {
+    background-color: white!important;
+    width: 250px;
+}
+#experience {
+    margin-top: 100px;
+}
+
+#experience h1 {
+    margin-bottom: 25px;
+}
+
+
+/** NAV **/
+nav{
+    position: fixed;
+}
+nav .navbar-nav li a  {
+    color: orange!important;
+}
+#active {
+    color: white!important;
+}
+
+.fa-bars {
+    color: orange;
+    transition: all 0.5s;
+}
+.fa-hamburger {
+    
+    color: orange;
+    transition: all 0.5s;
+}
+.fa-hamburger:hover {
+    color: orange;
+    transition: all 0.5s;
+}
+.fa-bars:hover {
+    color: orange;
+    transition: all 0.5s;
+}
+
+.nav-link:hover {
+    background-color: rgba(100, 100, 100, 0.3);
+}
+
+/* PROJECTS */
+.progIcons, .frameworks {
+    font-size: 5em;
+}
+.rightIcon {
+    margin-left: 15px;
+}
+
+
+/***********/
+/* BREAKPOINTS */
+/***********/
+
+@media (min-width: 100px) {
+    #badges {
+        margin-top: 5px;
+    }
+    #experienceCard {
+        margin-top: 5px;
+    }
+}
+@media (min-width: 576px) { 
+    #badges {
+        margin-top: 5px;
+    }
+    #experienceCard {
+        margin-top: 5px;
+    }
+}
+    
+    /* Medium devices (tablets, 768px and up) */
+    @media (min-width: 768px) { 
+        #badges {
+            margin-top: 0px;
+        }
+    }
+    
+    /* Large devices (desktops, 992px and up) */
+    @media (min-width: 992px) { 
+    
+    }
+    
+    /* Extra large devices (large desktops, 1200px and up) */
+    @media (min-width: 1200px) { 
+    
+    }
+
