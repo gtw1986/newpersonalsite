@@ -1,9 +1,12 @@
+
+
 const express = require('express'),
       app = express(),
       bodyParser = require('body-parser'),
       session = require('express-session'),
       cors = require('cors'),
       cookieParser = require('cookie-parser');
+      require('dotenv').config();
 
 app.set('view engine', 'ejs');
 
