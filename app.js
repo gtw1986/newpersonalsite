@@ -6,16 +6,18 @@ const express = require('express'),
       session = require('express-session'),
       cors = require('cors'),
       cookieParser = require('cookie-parser'),
-      compression = require('compression');
+      compression = require('compression'),
+      cache = require('express-cache-ctrl');
       require('dotenv').config();
 
 app.set('view engine', 'ejs');
+
 
 app.use(compression());
 app.use(cookieParser());
 app.use(cors());
 app.use(bodyParser.urlencoded({extended:true}));
-app.use(express.static(__dirname + '/public', { maxage: '1h' }));
+app.use(express.static(__dirname + '/public', cache.private(3600)));
 
 app.get('/', (req, res) => {
     console.log(req.headers);
