@@ -13,7 +13,7 @@ app.set('view engine', 'ejs');
 app.use(cookieParser());
 app.use(cors());
 app.use(bodyParser.urlencoded({extended:true}));
-app.use(express.static(__dirname + '/public', { maxAge: '1d' }));
+app.use(express.static(__dirname + '/public', { maxage: '1h' }));
 
 app.get('/', (req, res) => {
     console.log(req.headers);
