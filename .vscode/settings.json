@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/98fbedea-4de7-4e80-bbdc-b7fb582b9e80/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/garethwhitley",
+    "appService.deploySubpath": "."
+}
