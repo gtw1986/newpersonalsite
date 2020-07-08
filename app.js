@@ -5,11 +5,13 @@ const express = require('express'),
       bodyParser = require('body-parser'),
       session = require('express-session'),
       cors = require('cors'),
-      cookieParser = require('cookie-parser');
+      cookieParser = require('cookie-parser'),
+      compression = require('compression');
       require('dotenv').config();
 
 app.set('view engine', 'ejs');
 
+app.use(compression());
 app.use(cookieParser());
 app.use(cors());
 app.use(bodyParser.urlencoded({extended:true}));
