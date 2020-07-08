@@ -62,7 +62,7 @@ nav {
 
 .jumbotron {
     position: relative;
-    background-image: linear-gradient(to bottom, rgba(0,0,0,0.5)0%, rgba(0,0,0,0.6)100%),url('/assets/splash6.jpg');
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0.5)0%, rgba(0,0,0,0.6)100%),url('/assets/splash6-min.jpg');
     background-size: cover;
     margin-bottom: 0px;
     border-radius: 0px;
