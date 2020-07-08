@@ -83,7 +83,9 @@ nav {
 .socials a {
     color: white;
 }
-
+#cvButton {
+    margin-top: 55px;
+}
 #linkedin{
     margin-left: 15px;
 }
