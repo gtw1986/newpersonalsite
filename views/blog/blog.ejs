@@ -1,0 +1,53 @@
+<%- include('../partials/header') %>
+<%- include('../partials/contentHeader') %>
+<div class="container">
+            
+    <%- include('../partials/nav') %>
+</div>
+<div class="container">
+    <div class="row justify-content-center  ">
+        <div class="col-12 text-center">
+            <h2>Blog</h2>
+        </div>
+    </div>
+        
+    
+        <div class="container"id="blogPosts">
+
+        
+        <% posts.forEach(function(post) {  %>
+        <div class="row "id="blogRow">
+            <div class="col-12">
+                <strong><%= post.title %></strong><div class="float-right"> <% let string = '';
+                    string += post.updatedAt;
+                    let postUpdatedOn = string.substr(0, 15);
+                    %>
+                    <em><%= postUpdatedOn %></em></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <%= post.post %>
+                
+            </div>
+        </div>
+            <!--<div class="row">
+                <div class="col-12">
+                    <a href="/blog/<%= post._id %>"class="btn btn-sm btn-secondary">Read more ...</a>
+                    
+                </div>
+            </div>-->
+            
+        </div>
+        
+        <% }) %>
+    </div>
+    </div>
+</div>
+
+    
+    
+    
+
+
+<%- include('../partials/footer') %>

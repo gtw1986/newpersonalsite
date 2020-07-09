@@ -1,0 +1,27 @@
+<%- include('partials/header') %>
+<!--<%- include('partials/nav') %>-->
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-12 text-center">
+            <h2>Register</h2>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-12">
+                <a href="/admin" class="btn btn-sm btn-warning">Back to admin</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row justify-content-center"id="registerForm">
+    <div class="col-6 text-center">
+        <form action="/register" method="POST">
+            <input class="form-group form-control"type="text"name="email"placeholder="email">
+            
+            <input class="form-group form-control"type="text"name="username"placeholder="username">
+            <input class="form-group form-control"type="password"name="password"placeholder="password">
+            <input class="form-group form-control"type="password"name="pswRepeat"placeholder="repeat password">
+            <button class="btn btn-sm btn-warning">Register</button>
+            </form>
+    </div>
+</div>
+<%- include('partials/footer') %>

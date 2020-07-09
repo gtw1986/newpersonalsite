@@ -1,0 +1,23 @@
+<%- include('../partials/header') %>
+<div class="container-fluid row justify-content-center">
+    <div class="col-12 text-center">
+        <h2>Admin Dashboard</h2>
+    </div>
+
+    <div class="container row">
+        <div class="col-12 ">
+            <h2>Edit Post <strong><%= post.title %></strong></h2>
+        </div>
+        <div class="col-12">
+            <form action="/blog/<%= post._id %>?_method=PUT" method="POST">
+            <input type="text"name="post[title]"class="form-group form-control"value="<%= post.title %>">
+            <textarea rows="10"class="form-group form-control" name="post[post]"><%= post.post %> </textarea>
+                <button class="btn btn-sm btn-warning">Post</button>
+                <input type="reset" class="btn btn-sm btn-secondary">
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<%- include('../partials/footer') %>

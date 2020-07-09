@@ -1,0 +1,101 @@
+<%- include('partials/header') %>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-12 text-center">
+            <h2>Admin Dashboard</h2>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-12">
+                <a href="/" class="btn btn-sm btn-secondary">Main site</a>
+                <a href="/register" class="btn btn-sm btn-warning">Create new user</a>
+                <a href="/logout"class="btn btn-sm btn-warning">Logout</a>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row"id="blogRow">
+        <div class="col-12 text-center ">
+            <h3>Blog posts</h3>
+        </div>
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="col-10 col-md-12">
+    
+        <% posts.forEach(function(post) { %>
+            <div class="row justify-content-center "id="blogRow">
+                <div class="col-12 col-md-1">
+                    <% let string = '';
+                    string += post.updatedAt;
+                    let postUpdatedOn = string.substr(0, 15);
+                    %>
+                    <%= postUpdatedOn %>
+                </div>
+                <div class="col-4 col-md-3">
+                    <strong><%= post.title %></strong>
+                </div>
+                <div class="col-5 col-md-4">
+                    <%= post.post %>
+                </div>
+                <div class="col-3 col-md-2 ">
+                    <a href="/blog/<%= post._id %>/edit"><button class="btn btn-sm btn-warning ">Edit</button></a>
+                
+                
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-sm btn-danger blogButtons" data-toggle="modal" data-target="#deletePostModal">
+                        Delete
+                    </button>
+  
+                    <!-- Modal -->
+                    <div class="modal fade" id="deletePostModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Delete post</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            </div>
+                            <div class="modal-body">
+                            Are you sure you want to delete post: <%= post.title %>?
+                            </div>
+                            <div class="modal-footer">
+                            <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">Cancel</button>
+                            <form action="/blog/<%= post._id %>?_method=DELETE"method="POST"><button class="btn btn-sm btn-danger">Delete</button></form>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    
+                </div>
+            </div>
+       <%  }) %>
+    </div>
+</div>
+
+<div class="row"id="newPostRow">
+    <div class="col-12 text-center">
+        <h3>New post</h3>
+    </div>
+</div>
+   <div class="row justify-content-center">
+   
+        <div class="col-12 col-md-6">
+            <form action="/blog" method="POST">
+            <input type="text"name="title"class="form-group form-control">
+            <textarea rows="10"class="form-group form-control" name="post"></textarea>
+                <button class="btn btn-sm btn-warning">Post</button>
+                <input type="reset" class="btn btn-sm btn-secondary">
+            </form>
+        </div>
+    </div>
+</div>
+
+<%- include('partials/footer') %>
