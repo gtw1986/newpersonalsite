@@ -51,7 +51,7 @@ app.use(function (req, res, next) {
 })
 
 // DB
-mongoose.connect(process.env.DB, {
+mongoose.connect(process.env.MONGO_URL, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 }).then(()=> {
