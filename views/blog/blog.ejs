@@ -11,17 +11,18 @@
         </div>
     </div>
         
-    
+    <% posts.forEach(function(post) {  %>
         <div class="container"id="blogPosts">
 
         
-        <% posts.forEach(function(post) {  %>
-        <div class="row "id="blogRow">
+        
+        <div class="row"id="blogRow">
             <div class="col-12">
-                <strong><%= post.title %></strong><div class="float-right"> <% let string = '';
-                    string += post.updatedAt;
-                    let postUpdatedOn = string.substr(0, 15);
-                    %>
+                <strong><%= post.title %></strong>
+                    <div class="float-right">
+                        <% let string = '';
+                        string += post.updatedAt;
+                        let postUpdatedOn = string.substr(0, 15); %>
                     <em><%= postUpdatedOn %></em></div>
             </div>
         </div>
