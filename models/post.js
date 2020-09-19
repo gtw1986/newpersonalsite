@@ -5,6 +5,7 @@ const Schema = mongoose.Schema;
 
  
 const PostSchema = new Schema({
+    featuredImage: String,
     author: {
         id: {
             type: mongoose.Schema.Types.ObjectId,

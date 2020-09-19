@@ -2,21 +2,58 @@
 <div class="container-fluid row justify-content-center">
     <div class="col-12 text-center">
         <h2>Admin Dashboard</h2>
+        <p>
+            <a href="/admin" class="btn btn-sm btn-warning">Back to Admin</a>
+        </p>
     </div>
 
-    <div class="container row">
-        <div class="col-12 ">
-            <h2>Edit Post <strong><%= post.title %></strong></h2>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2>Edit Post <strong><%= post.title %></strong></h2>
+            </div>
         </div>
-        <div class="col-12">
-            <form action="/blog/<%= post._id %>?_method=PUT" method="POST">
-            <input type="text"name="post[title]"class="form-group form-control"value="<%= post.title %>">
-            <textarea rows="10"class="form-group form-control" name="post[post]"><%= post.post %> </textarea>
-                <button class="btn btn-sm btn-warning">Post</button>
-                <input type="reset" class="btn btn-sm btn-secondary">
-            </form>
+        
+        <div class="row justify-content-center">
+            <div class="container">    
+                <div class="row justify-content-center align-items-center">
+                    <div class="col-12 col-md-4">
+                        <img src="/<%= post.featuredImage %>"class="postImage">
+                    </div>
+                    <div class="col-12 col-md-4">
+                        
+                        <form action="/blog/upload/<%= post._id %>?_method=PUT"method="POST"enctype="multipart/form-data">
+                            
+                            <input type="file" name="featuredImage" class=""/>
+                        
+                            <input type="submit">
+                        </form>
+                    </div>
+                        
+                    </div>
+                </div>
+            
         </div>
+        <div class="row justify-content-center">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-6">
+                        <form action="/blog/<%= post._id %>?_method=PUT" method="POST">
+                        <input type="text"name="post[title]"class="form-group form-control"value="<%= post.title %>">
+                        
+                        <textarea rows="10"class="form-group form-control" name="post[post]"><%= post.post %> </textarea>
+                            <button class="btn btn-sm btn-warning">Post</button>
+                            <input type="reset" class="btn btn-sm btn-secondary">
+                        </form>
+                    </div>
+                </div>
+                
+            </div>
+            
+        </div>
+        
     </div>
+    
 </div>
 
 

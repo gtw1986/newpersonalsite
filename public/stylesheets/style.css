@@ -76,6 +76,11 @@ nav {
     padding-top: 20px;
     color: white;
 }
+.postImage {
+    width: 50%;
+    margin: 0 auto;
+    display: block;
+}
 .socials {
     font-size:1.5em;
 }

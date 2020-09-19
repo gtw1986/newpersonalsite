@@ -13,13 +13,13 @@ toggler.addEventListener('mouseleave', () => {
    
 })
 
-var acc = document.getElementsByClassName("accordion");
-var i;
+let acc = document.getElementsByClassName("accordion");
+let i;
 
 for (i = 0; i < acc.length; i++) {
     acc[i].addEventListener("click", function() {
       this.classList.toggle("active-acc");
-      var panel = this.nextElementSibling;
+      let panel = this.nextElementSibling;
       if (panel.style.maxHeight) {
         panel.style.maxHeight = null;
       } else {
@@ -29,8 +29,8 @@ for (i = 0; i < acc.length; i++) {
 
 $(document).ready(function () {
     $(document).click(function (event) {
-        var clickover = $(event.target);
-        var _opened = $(".navbar-collapse").hasClass("show");
+        let clickover = $(event.target);
+        let _opened = $(".navbar-collapse").hasClass("show");
         if (_opened === true && !clickover.hasClass("navbar-toggler")) {
             $(".navbar-toggler").click();
         }

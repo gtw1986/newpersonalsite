@@ -28,16 +28,19 @@
         </div>
         <div class="row">
             <div class="col-12">
-                <%= post.post %>
+                <% let postString = '';
+                postString += post.post;
+                let postSnippet = postString.substr(0, 50); %>
+                <%= postSnippet %>
                 
             </div>
         </div>
-            <!--<div class="row">
+            <div class="row">
                 <div class="col-12">
                     <a href="/blog/<%= post._id %>"class="btn btn-sm btn-secondary">Read more ...</a>
                     
                 </div>
-            </div>-->
+            </div>
             
         </div>
         

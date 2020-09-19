@@ -88,8 +88,9 @@
    <div class="row justify-content-center">
    
         <div class="col-12 col-md-6">
-            <form action="/blog" method="POST">
+            <form action="/blog" method="POST" enctype="multipart/form-data">
             <input type="text"name="title"class="form-group form-control">
+            <input type="file" name="featuredImage" class="form-group form-control"/>
             <textarea rows="10"class="form-group form-control" name="post"></textarea>
                 <button class="btn btn-sm btn-warning">Post</button>
                 <input type="reset" class="btn btn-sm btn-secondary">

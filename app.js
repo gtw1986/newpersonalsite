@@ -15,6 +15,8 @@ const express = require('express'),
       mongoose = require('mongoose'),
       User = require('./models/user'),
       Post = require('./models/post'),
+      multer = require('multer'),
+      upload = multer({ dest: 'uploads/'}),
       passport = require('passport');
       require('dotenv').config();
 
