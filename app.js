@@ -17,6 +17,7 @@ const express = require('express'),
       Post = require('./models/post'),
       multer = require('multer'),
       upload = multer({ dest: 'uploads/'}),
+      showdown = require('showdown'),
       passport = require('passport');
       require('dotenv').config();
 
@@ -31,7 +32,8 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static(__dirname + '/public', cache.private(3600)));
 app.use(methodOverride('_method'));
 
-
+// MARKUP CONVERTER
+convert = new showdown.Converter();
 
 // SESSION
 app.use(require('express-session')({ 

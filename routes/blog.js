@@ -3,9 +3,10 @@ const router = express.Router();
 const passport = require("passport");
 const middleware = require('../middleware');
 const User = require("../models/user");
-const Post = require("../models/post");
+const Post = require("../models/post"),
+showdown = require('showdown');
 const { isLoggedIn, isAdmin } = require("../middleware");
-const multer  = require('multer')
+const multer  = require('multer');
 const path = require('path');
 
 // GET ALL POSTS
@@ -39,6 +40,7 @@ const upload = multer({
   
 // CREATE POST
 router.post('/', (req, res) => {
+
     upload(req, res, (err) => {
         if(err){
           if(err.code = 'LIMIT_FILE_SIZE'){
@@ -58,12 +60,15 @@ router.post('/', (req, res) => {
             let featuredImage = req.file.filename;
             featuredImage = "uploads/" + featuredImage;
             let title = req.body.title;
-            let post = req.body.post;
+            let postText = req.body.post;
+            let post = converter.makeHtml(postText);
+            console.log(post);
+            //let post = req.body.post;
             let author = {
             id: req.user._id,
             username: req.user.username
             }
-            let newPost = {title: title, post: post, author: author, featuredImage: featuredImage};
+            let newPost = {title: title, id: id, post: post, author: author, featuredImage: featuredImage};
             
     Post.create(newPost,function(err, newlyCreated) {
         if(err) {
