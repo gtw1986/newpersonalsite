@@ -127,6 +127,9 @@ box-shadow: 1px -3px 31px 7px rgba(0,0,0,0.5);
 #loginForm {
     margin-top: 25px;
 }
+#postContent {
+    margin-top: 15px;
+}
 #radio {
     margin-left: 15px;
 }
